@@ -61,14 +61,14 @@
             background-color: #F3F8FA;
         }
 
-        .badge.purpure {
+        .badge.purple {
             border-color: #b09eb7;
 
             color: #b09eb7;
         }
-        .badge.purpure .shape,
-        .badge.purpure .small-shape,
-        .badge.purpure .circle {
+        .badge.purple .shape,
+        .badge.purple .small-shape,
+        .badge.purple .circle {
             background-color: #F7F5F8;
         }
 
@@ -150,7 +150,7 @@
     var getBadgeEl = function getAchivmentEl(number) {
         var badgeEl = document.createElement("div");
 
-        badgeEl.className = "badge" + ((number % 2 == 0) ? " blue" : " purpure");
+        badgeEl.className = "badge" + ((number % 2 == 0) ? " blue" : " purple");
 
         var shapeEl = document.createElement("div");
         var imageEl = document.createElement("div");
