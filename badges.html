@@ -10,11 +10,13 @@
             font-family: 'Oswald', sans-serif;
         }
 
-        #container {
+        #container,
+        #container2 {
             font-size: 0;
             text-align: center;
         }
 
+        /*FIRST WAY*/
         .badge {
             position: relative;
             width: 100px;
@@ -138,14 +140,120 @@
             background: #fff;
             z-index: 3;
         }
+        /*FIRST WAY END*/
 
+        /*SECOND WAY*/
+        .badge-wrapper {
+            position: relative;
+            width: 100px;
+            height: 100px;
+            display: inline-block;
+            margin: 5px;
+
+            font-size: 14px;
+        }
+        .badge-wrapper.primary {
+            color: #89b8cf;
+        }
+        .badge-wrapper.secondary {
+            color: #b09eb7;
+        }
+
+        .badge-wrapper.secondary .badge-shape:before,
+        .badge-wrapper .badge-shape:after {
+            content: "";
+            position: absolute;
+
+            border-width: 4px;
+            border-style: solid;
+            border-color: inherit;
+            border-radius: 50%;
+
+            box-sizing: border-box;
+            color: inherit;
+
+            background-color: #FFF;
+
+            z-index: 2;
+        }
+        .badge-wrapper.primary .badge-shape:after {
+            border-color: #89b8cf;
+            background-color: #F3F8FA;
+        }
+        .badge-wrapper.secondary .badge-shape:before,
+        .badge-wrapper.secondary .badge-shape:after {
+            border-color: #b09eb7;
+            background-color: #F7F5F8;
+        }
+        .badge-wrapper.secondary .badge-shape:before {
+            right: -2px;
+            bottom: -2px;
+
+            width: 48px;
+            height: 48px;
+        }
+        .badge-wrapper .badge-shape:after {
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .badge-wrapper .badge-image {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+
+            width: 74px;
+            height: 60px;
+            margin: -30px -37px;
+
+            background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEoAAAB4CAMAAABivJTlAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAMAUExURQAAALCetoq4zwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAE91CzkAAAEAdFJOU////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////wBT9wclAAAACXBIWXMAAA7DAAAOwwHHb6hkAAAAH3RFWHRTb2Z0d2FyZQBQYWludC5ORVQgPz8/Pz8/IDMuNS40kM0z9wAAAo1JREFUaEPtj8uW3DAIBZP8/z93JChbgF4oHq/StRgjuLf6zK/Pj/FV5fmvVH8KjBliPKrSMg3btFFxTMlIzlTtvpORqrCpjFUuEhf6VlgJM1USmoJVnbvoKW+pTl20wKsOXZTgiYrOxVv/IIk89BSr4n4CTcGouJ5Bt9JU3PTKOKZLK53Kv0b4BK/CrTIXxhWhIQTVPWyxFeVS6dr+2prQqXiVnZfYoM5rVe9sGxuU+Va1JVPFPQR/faIK12cqs3Gtile5sJ3BX7cqE9APL/1rk0x1rASVrK/BfAdbpoI8blVcC34hL3vXRYF3VLVweM7ebdOr9MY4qzIKci2MVA7uicSl2iZ59XB/R7XJMvfIVUioapppgJYrTbWK8x1At2JUi8IUmoJVnbvoKU516qIFXnUko3ETVWkZaUOvqhCfQSowVjUoC6xm7FTNxXvOVoWMeUVCleWryvNV5fmq8rym+l1gzODjvSot03BLOxXHlIzkTNXuOxmpCpu5ysniQt8Kq8JclYRmwavOXfQq76lOXbSEqDp0URKeqego7/2DJPLQq3gV9xNoFpyK6xl0vYqbXhnHdOnKQOVfI3yCl1WZC+OK0CiMVAw77orWjUrX9tc2+M5ElXFJjqDOUWXn8uLbMDcTlPlWtSVTxT0Et3ikCtdnKrNxrV7lwnaGf1Qxsrgek+RAJetrMN/Blqkgj1vl1+AX8rJ3XRTk1ataODzjm2dB3yOV3hh7VTgX5DpRObhvE021dfHq4f6OapNlHiDnpKqGmQZo2auWcYYeukG1cE2hWfCqcxe9SlCdumgJUXUkowG9Ki0jfTNSVYjPIOWYqRqUK2wm7FXNxXtGQoWMeU5KleOryvNjqs/nL12o7F2DKjJGAAAAAElFTkSuQmCC');
+            background-size: 74px 120px;
+            background-repeat: no-repeat;
+
+            border-radius: 50%;
+
+            z-index: 4;
+        }
+        .badge-wrapper.primary .badge-image {
+            background-position: center 0;
+        }
+
+        .badge-wrapper.secondary .badge-image {
+            background-position: center -60px;
+        }
+
+        .badge-wrapper .badge-number {
+            position: absolute;
+            bottom: 2px;
+            right: 2px;
+
+            width: 40px;
+            height: 40px;
+            padding: 5px 10px;
+
+            line-height: 40px;
+            font-size: 1.3em;
+            color: inherit;
+            text-align: right;
+
+            background-color: #f7f5f8;
+            border-radius: 50%;
+            box-sizing: border-box;
+
+            z-index: 2;
+        }
+        /*SECOND WAY END*/
     </style>
 </head>
 <body>
 <div id="container"></div>
+<div id="container2"></div>
 
 <script type="text/javascript">
     var containerEl = document.getElementById("container");
+    var container2El = document.getElementById("container2");
     var max = 8;
     var getBadgeEl = function getAchivmentEl(number) {
         var badgeEl = document.createElement("div");
@@ -181,8 +289,39 @@
         return badgeEl;
     };
 
+    var getBadge2El = function getAchivmentEl(number) {
+        var badgeEl = document.createElement("div");
+
+        badgeEl.className = "badge-wrapper";
+
+        var badgeShapeEl = document.createElement("div");
+        var badgeImageEl = document.createElement("div");
+
+        badgeShapeEl.className = "badge-shape";
+        badgeImageEl.className = "badge-image";
+
+        badgeEl.appendChild(badgeShapeEl);
+        badgeEl.appendChild(badgeImageEl);
+
+        if (!+number || number === 0) {
+            badgeEl.className += " primary";
+            return badgeEl;
+        }
+
+        badgeEl.className += " secondary";
+        var badgeNumberEl = document.createElement("div");
+
+        badgeNumberEl.className = "badge-number";
+        badgeNumberEl.innerHTML = number;
+
+        badgeEl.appendChild(badgeNumberEl);
+
+        return badgeEl;
+    };
+
     for (var i = 0; i < max; i++) {
         containerEl.appendChild(getBadgeEl(i));
+        container2El.appendChild(getBadge2El(i));
     }
 </script>
 </body>
